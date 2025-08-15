@@ -1,0 +1,2 @@
+REDIS_URL = "redis://:abC123456@@101.126.81.112:6379/0"
+DASHSCOPE_API_KEY = "sk-d0dc2d3a0ee141b5bea5cb1dc94d7025"
