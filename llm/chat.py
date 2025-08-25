@@ -4,7 +4,7 @@ from langchain.memory.chat_message_histories import RedisChatMessageHistory
 from langchain.prompts import ChatPromptTemplate, MessagesPlaceholder
 
 from llm import REDIS_URL
-from llm.model import getChatModel
+from llm.model import get_chat_model
 
 
 # Redis 存储函数
@@ -16,7 +16,7 @@ def get_memory(session_id: str):
 
 # 创建会话
 def get_conversation_chain():
-    llm = getChatModel()
+    llm = get_chat_model()
 
     # Prompt 模板
     prompt = ChatPromptTemplate.from_messages([

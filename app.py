@@ -16,6 +16,8 @@ def chat():
 
     conversation = get_conversation_chain()
 
+
+    # if message
     response = conversation.invoke(
         {"input": message},
         config={"configurable": {"session_id": user_id}}  # 必须传会话ID
