@@ -5,16 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b8242cc0-8b61-4714-935b-422778a61fbe" name="Changes" comment="initial">
-      <change afterPath="$PROJECT_DIR$/import_rag.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rag/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rag/entity/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rag/entity/milvus_rag_system.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rag/entity/temporal_rag_system.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/text.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/abc.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/abd.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/acc.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/chat.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/chat.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/llm/model.py" beforeDir="false" afterPath="$PROJECT_DIR$/llm/model.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,27 +46,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Flask server.Flask (app.py).executor": "Run",
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "Python.import_rag.executor": "Run",
-    "Python.main.executor": "Run",
-    "Python.milvus_rag_system.executor": "Run",
-    "Python.tax_document_crawler.executor": "Run",
-    "Python.tax_document_crawler_with_rag.executor": "Run",
-    "Python.text.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "master",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Flask server.Flask (app.py).executor&quot;: &quot;Run&quot;,
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;Python.import_rag.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.milvus_rag_system.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tax_document_crawler.executor&quot;: &quot;Run&quot;,
+    &quot;Python.tax_document_crawler_with_rag.executor&quot;: &quot;Run&quot;,
+    &quot;Python.text.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\system\desk\Asset Inventory\FlaskProject\rag\entity" />
@@ -237,7 +231,10 @@
       <workItem from="1755765065695" duration="2851000" />
       <workItem from="1755824995405" duration="2936000" />
       <workItem from="1755834028883" duration="9940000" />
-      <workItem from="1756084572908" duration="20126000" />
+      <workItem from="1756084572908" duration="20367000" />
+      <workItem from="1756118106674" duration="39000" />
+      <workItem from="1756194060112" duration="1532000" />
+      <workItem from="1756210098493" duration="6376000" />
     </task>
     <task id="LOCAL-00001" summary="initial">
       <option name="closed" value="true" />
@@ -247,11 +244,42 @@
       <option name="project" value="LOCAL" />
       <updated>1755246031127</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="initial">
+      <option name="closed" value="true" />
+      <created>1756113470834</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1756113470834</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="initial" />
@@ -263,7 +291,7 @@
     <SUITE FILE_PATH="coverage/FlaskProject$tax_document_crawler_with_rag.coverage" NAME="tax_document_crawler_with_rag Coverage Results" MODIFIED="1755743575308" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FlaskProject$text.coverage" NAME="text Coverage Results" MODIFIED="1756112570537" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FlaskProject$Flask__app_py_.coverage" NAME="Flask (app.py) Coverage Results" MODIFIED="1755849601582" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/FlaskProject$import_rag.coverage" NAME="import_rag Coverage Results" MODIFIED="1756113020038" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/FlaskProject$import_rag.coverage" NAME="import_rag Coverage Results" MODIFIED="1756113330092" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/FlaskProject$tax_document_crawler.coverage" NAME="tax_document_crawler Coverage Results" MODIFIED="1755745300512" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
