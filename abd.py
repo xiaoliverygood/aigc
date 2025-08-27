@@ -259,6 +259,7 @@ def get_service_unit(service_item):
 def calculate_audit_fee(service_item, amount, **kwargs):
     """
     根据服务项目计算审计收费（含计算明细）
+    years
     """
 
     return_details = kwargs.get("return_details", False)
@@ -355,7 +356,7 @@ def calculate_audit_fee(service_item, amount, **kwargs):
                 return 1000, ["最低收费: 1000元"]
             return 1000
 
-    # 特殊目的审计
+    # 特殊目的审计 按照4收费标准
     elif service_item == "特殊目的审计":
         base_fee = calculate_financial_audit_fee(amount)
         result = round_to_2_decimal(base_fee * 1.5)
@@ -474,96 +475,98 @@ if __name__ == "__main__":
         for step in result['calculation_details']:
             print(f"  - {step}")
     #
-    # # 测试2：资本验证（货币）- 300万元
-    # print("\n【测试2】资本验证（货币出资）- 300万元")
-    # result = main(
-    #     company_name="测试公司B",
-    #     service_item="资本验证",
-    #     amount=3000000,
-    #     amount_type="capital",
-    #     verification_type="货币",
-    #     show_details=True
-    # )
-    # print(f"客户：{result['company_name']}")
-    # print(f"服务：{result['service_item']}（{result['service_unit']}）")
-    # print(f"验资类型：{result['verification_type']}出资")
-    # print(f"计费基数：{result['amount']}元（{result['amount_type']}）")
-    # print(f"收费金额：{result['fee']}元")
-    #
-    # # 测试3：资本验证（其他）- 300万元
-    # print("\n【测试3】资本验证（其他出资）- 300万元")
-    # result = main(
-    #     company_name="测试公司C",
-    #     service_item="资本验证",
-    #     amount=3000000,
-    #     amount_type="capital",
-    #     verification_type="其他",
-    #     show_details=True
-    # )
-    # print(f"客户：{result['company_name']}")
-    # print(f"服务：{result['service_item']}（{result['service_unit']}）")
-    # print(f"验资类型：{result['verification_type']}出资")
-    # print(f"计费基数：{result['amount']}元（{result['amount_type']}）")
-    # print(f"收费金额：{result['fee']}元")
-    #
-    # # 测试4：清产核资 - 500万元
-    # print("\n【测试4】清产核资 - 500万元")
-    # result = main(
-    #     company_name="测试公司D",
-    #     service_item="清产核资",
-    #     amount=5000000,
-    #     show_details=True
-    # )
-    # print(f"客户：{result['company_name']}")
-    # print(f"服务：{result['service_item']}（{result['service_unit']}）")
-    # print(f"计费基数：{result['amount']}元")
-    # print(f"收费金额：{result['fee']}元")
-    #
-    # # 测试5：经济责任审计（4年）- 200万元
-    # print("\n【测试5】经济责任审计（4年）- 200万元")
-    # result = main(
-    #     company_name="测试公司E",
-    #     service_item="经济责任审计",
-    #     amount=2000000,
-    #     years=4,
-    #     show_details=True
-    # )
-    # print(f"客户：{result['company_name']}")
-    # print(f"服务：{result['service_item']}（{result['service_unit']}）")
-    # print(f"审计年数：{result['years']}年")
-    # print(f"计费基数：{result['amount']}元")
-    # print(f"收费金额：{result['fee']}元")
-    # if 'calculation_details' in result:
-    #     print("计算明细：")
-    #     for step in result['calculation_details']:
-    #         print(f"  - {step}")
-    #
-    # # 测试6：外汇收支审核（计时）
-    # print("\n【测试6】外汇收支审核（计时收费）")
-    # result = main(
-    #     company_name="测试公司F",
-    #     service_item="外汇收支审核",
-    #     hours_by_level={"注册会计师": 5, "助理": 10},
-    #     show_details=True
-    # )
-    # print(f"客户：{result['company_name']}")
-    # print(f"服务：{result['service_item']}（{result['service_unit']}）")
-    # print(f"工时：{result['hours_breakdown']}")
-    # print(f"收费金额：{result['fee']}元")
-    # if 'calculation_details' in result:
-    #     print("计算明细：")
-    #     for step in result['calculation_details']:
-    #         print(f"  - {step}")
-    #
-    # # 测试7：医疗卫生机构审计 - 1.5亿元
-    # print("\n【测试7】医疗卫生机构审计 - 1.5亿元")
-    # result = main(
-    #     company_name="某医院",
-    #     service_item="医疗卫生机构审计",
-    #     amount=150000000,
-    #     show_details=True
-    # )
-    # print(f"客户：{result['company_name']}")
-    # print(f"服务：{result['service_item']}（{result['service_unit']}）")
-    # print(f"计费基数：{result['amount']}元")
-    # print(f"收费金额：{result['fee']}元")
+    # 测试2：资本验证（货币）- 300万元
+    print("\n【测试2】资本验证（货币出资）- 300万元")
+    result = main(
+        company_name="测试公司B",
+        service_item="资本验证",
+        amount=3000000,
+        amount_type="capital",
+        verification_type="货币",
+        show_details=True
+    )
+    print(f"客户：{result['company_name']}")
+    print(f"服务：{result['service_item']}（{result['service_unit']}）")
+    print(f"验资类型：{result['verification_type']}出资")
+    print(f"计费基数：{result['amount']}元（{result['amount_type']}）")
+    print(f"收费金额：{result['fee']}元")
+
+    # 测试3：资本验证（其他）- 300万元
+    print("\n【测试3】资本验证（其他出资）- 300万元")
+    result = main(
+        company_name="测试公司C",
+        service_item="资本验证",
+        amount=3000000,
+        amount_type="capital",
+        verification_type="其他",
+        show_details=True
+    )
+    print(f"客户：{result['company_name']}")
+    print(f"服务：{result['service_item']}（{result['service_unit']}）")
+    print(f"验资类型：{result['verification_type']}出资")
+    print(f"计费基数：{result['amount']}元（{result['amount_type']}）")
+    print(f"收费金额：{result['fee']}元")
+
+    # 测试4：清产核资 - 500万元
+    print("\n【测试4】清产核资 - 500万元")
+    result = main(
+        company_name="测试公司D",
+        service_item="清产核资",
+        amount=5000000,
+        show_details=True
+    )
+    print(f"客户：{result['company_name']}")
+    print(f"服务：{result['service_item']}（{result['service_unit']}）")
+    print(f"计费基数：{result['amount']}元")
+    print(f"收费金额：{result['fee']}元")
+
+    # 测试5：经济责任审计（4年）- 200万元
+    print("\n【测试5】经济责任审计（4年）- 200万元")
+    result = main(
+        company_name="测试公司E",
+        service_item="经济责任审计",
+        amount=2000000,
+        years=4,
+        show_details=True
+    )
+    print(f"客户：{result['company_name']}")
+    print(f"服务：{result['service_item']}（{result['service_unit']}）")
+    print(f"审计年数：{result['years']}年")
+    print(f"计费基数：{result['amount']}元")
+    print(f"收费金额：{result['fee']}元")
+    if 'calculation_details' in result:
+        print("计算明细：")
+        for step in result['calculation_details']:
+            print(f"  - {step}")
+
+    # 测试6：外汇收支审核（计时）
+    print("\n【测试6】外汇收支审核（计时收费）")
+    result = main(
+        company_name="测试公司F",
+        service_item="外汇收支审核",
+        hours_by_level={"注册会计师": 5, "助理": 10},
+        show_details=True
+    )
+    print(f"客户：{result['company_name']}")
+    print(f"服务：{result['service_item']}（{result['service_unit']}）")
+    print(f"工时：{result['hours_breakdown']}")
+    print(f"收费金额：{result['fee']}元")
+    if 'calculation_details' in result:
+        print("计算明细：")
+        for step in result['calculation_details']:
+            print(f"  - {step}")
+
+    # 测试7：医疗卫生机构审计 - 1.5亿元
+    print("\n【测试7】医疗卫生机构审计 - 1.5亿元")
+    result = main(
+        company_name="某医院",
+        service_item="医疗卫生机构审计",
+        amount=150000000,
+        show_details=True
+    )
+    print(f"客户：{result['company_name']}")
+    print(f"服务：{result['service_item']}（{result['service_unit']}）")
+    print(f"计费基数：{result['amount']}元")
+    print(f"收费金额：{result['fee']}元")
+
+    print(result)
