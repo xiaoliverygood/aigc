@@ -4,12 +4,10 @@ import requests
 test_data = {
     "company_name": "测试公司",
     "services": [
-        {"name": "服务A", "total_fee": 100034},
-        {"name": "服务B", "total_fee": 200001}
+        {"name": "服务A", "total_fee": "100034"},
+        {"name": "服务B", "total_fee": "200001"}
     ],
-    "year": 2025,
-    "month": 12,
-    "day": 10,
+    "date": "2025年08月29日",
     "services_description": "测试描述"
 }
 

@@ -1,0 +1,1461 @@
+app:
+  description: 智能报价函，具有AI推理能力
+  icon: globe_with_meridians
+  icon_background: '#FFEAD5'
+  mode: workflow
+  name: 智能报价函V2.0
+  use_icon_as_answer_icon: false
+dependencies:
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/siliconflow:0.0.24@7160c992e08b221174d60b5f231011978f812a22e6487f4e213f227000a82e65
+- current_identifier: null
+  type: marketplace
+  value:
+    marketplace_plugin_unique_identifier: langgenius/tongyi:0.0.42@85e7bb71e461653ac101330c751973085dfdde26c906b07d7dff8030c95bc39e
+kind: app
+version: 0.3.1
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      allowed_file_extensions:
+      - .JPG
+      - .JPEG
+      - .PNG
+      - .GIF
+      - .WEBP
+      - .SVG
+      allowed_file_types:
+      - image
+      allowed_file_upload_methods:
+      - local_file
+      - remote_url
+      enabled: false
+      fileUploadConfig:
+        audio_file_size_limit: 50
+        batch_count_limit: 5
+        file_size_limit: 15
+        image_file_size_limit: 10
+        video_file_size_limit: 100
+        workflow_file_upload_limit: 10
+      image:
+        enabled: false
+        number_limits: 3
+        transfer_methods:
+        - local_file
+        - remote_url
+      number_limits: 3
+    opening_statement: ''
+    retriever_resource:
+      enabled: true
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+      language: ''
+      voice: ''
+  graph:
+    edges:
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: start
+        targetType: llm
+      id: 1756172570320-source-1756172932141-target
+      source: '1756172570320'
+      sourceHandle: source
+      target: '1756172932141'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: llm
+        targetType: code
+      id: 1756172932141-source-1756173649448-target
+      source: '1756172932141'
+      sourceHandle: source
+      target: '1756173649448'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: template-transform
+      id: 1756174408612-source-1756175153835-target
+      selected: false
+      source: '1756174408612'
+      sourceHandle: source
+      target: '1756175153835'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: template-transform
+        targetType: end
+      id: 1756175153835-source-17561798867230-target
+      selected: false
+      source: '1756175153835'
+      sourceHandle: source
+      target: '17561798867230'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1756174408612-source-1756174402153-target
+      selected: false
+      source: '1756174408612'
+      sourceHandle: source
+      target: '1756174402153'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1756174402153-source-17561798867230-target
+      selected: false
+      source: '1756174402153'
+      sourceHandle: source
+      target: '17561798867230'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: if-else
+      id: 1756173649448-source-1756174131677-target
+      selected: false
+      source: '1756173649448'
+      sourceHandle: source
+      target: '1756174131677'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1756174131677-b32b390a-1f85-4c1f-91fd-05ae9bae90c3-1756174408612-target
+      selected: false
+      source: '1756174131677'
+      sourceHandle: b32b390a-1f85-4c1f-91fd-05ae9bae90c3
+      target: '1756174408612'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 1756194683461-source-1756175288739-target
+      selected: false
+      source: '1756194683461'
+      sourceHandle: source
+      target: '1756175288739'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: llm
+      id: 1756174408612-source-1756194683461-target
+      selected: false
+      source: '1756174408612'
+      sourceHandle: source
+      target: '1756194683461'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: llm
+        targetType: end
+      id: 1756194683461-source-1756259088007-target
+      selected: false
+      source: '1756194683461'
+      sourceHandle: source
+      target: '1756259088007'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1756363745296-source-1756364043223-target
+      source: '1756363745296'
+      sourceHandle: source
+      target: '1756364043223'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInIteration: false
+        isInLoop: false
+        sourceType: code
+        targetType: end
+      id: 1756366217920-source-1756366266628-target
+      selected: false
+      source: '1756366217920'
+      sourceHandle: source
+      target: '1756366266628'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: if-else
+        targetType: code
+      id: 1756174131677-true-1756363745296-target
+      selected: false
+      source: '1756174131677'
+      sourceHandle: 'true'
+      target: '1756363745296'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    - data:
+        isInLoop: false
+        sourceType: code
+        targetType: code
+      id: 1756174408612-source-1756366217920-target
+      selected: false
+      source: '1756174408612'
+      sourceHandle: source
+      target: '1756366217920'
+      targetHandle: target
+      type: custom
+      zIndex: 0
+    nodes:
+    - data:
+        desc: ''
+        selected: false
+        title: 输入文本
+        type: start
+        variables:
+        - label: user_input
+          max_length: 256
+          options: []
+          required: true
+          type: text-input
+          variable: user_input
+      height: 89
+      id: '1756172570320'
+      position:
+        x: 30
+        y: 262.5
+      positionAbsolute:
+        x: 30
+        y: 262.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: true
+          variable_selector:
+          - '1756172570320'
+          - user_input
+        desc: ''
+        model:
+          completion_params:
+            temperature: 0.8
+          mode: chat
+          name: Qwen/Qwen3-235B-A22B-Instruct-2507
+          provider: langgenius/siliconflow/siliconflow
+        prompt_config:
+          jinja2_variables: []
+        prompt_template:
+        - edition_type: basic
+          id: bc246dce-d87c-4f37-ae78-246937188150
+          role: system
+          text: "核心任务\n你是一个专业的信息提取助手，负责从用户的口语化描述中提取关键信息并生成标准化JSON数据。\n输入处理规则\n如果输入包含\
+            \ #context# 标记，提取其中的文本内容\n如果是直接文本，则直接处理\n忽略所有JSON格式包装，只关注实际描述内容\n信息提取规则\n\
+            1. 公司名称识别\n优先级规则：\n查找包含\"公司\"、\"企业\"、\"集团\"、\"有限公司\"的完整名称\n如\"深圳腾讯有限公司\"\
+            、\"北京科技公司\"等\n如果找到，提取完整的公司名称\n如果未找到，使用\"待定客户\"\n2. 服务类型识别\n审计类服务 (service_category:\
+            \ \"audit\")\n\"审计\"、\"年审\"、\"财务报表\"、\"财务审计\" → service_item: \"财务报表审计\"\
+            \n\"验资\"、\"资本验证\"、\"出资\" → service_item: \"资本验证\"\n\"清算\"、\"破产\"、\"合并\"\
+            、\"分立\" → service_item: \"合并、分立、清算审计\"\n\"经济责任\"、\"离任\"、\"任期\" → service_item:\
+            \ \"经济责任审计\"\n\"清产核资\" → service_item: \"清产核资\"\n\"外汇\"、\"外币\" → service_item:\
+            \ \"外汇收支审核\"\n\"专项\"、\"特定目的\" → service_item: \"特殊目的审计\"\n税务类服务 (service_category:\
+            \ \"tax\")\n\"汇算清缴\"、\"所得税申报\"、\"年度申报\" → service_item: \"企业所得税汇算清缴纳税申报鉴证\"\
+            \n\"亏损\"、\"弥补\" → service_item: \"企业所得税税前弥补亏损鉴证\"\n\"资产损失\"、\"报损\"、\"\
+            损失扣除\" → service_item: \"企业资产损失所得税前扣除鉴证\"\n3. 金额识别与类型判断\n金额提取：\n识别数字+单位（万、亿等）\n\
+            转换为纯数字：30万 → 300000.00\n如果没有明确金额，amount设为0\n金额类型判断：\n包含\"资产\"、\"资产总额\"\
+            \ → amount_type: \"asset\"\n包含\"营收\"、\"营业收入\"、\"收入\" → amount_type: \"\
+            revenue\"\n包含\"资本\"、\"实收资本\"、\"注册资本\" → amount_type: \"capital\"\n默认使用\
+            \ \"asset\"\n4. 年份计算\n单个年份（如\"2024年\"）→ years: 1\n年份范围（如\"2023-2025年\"\
+            ）→ years: 计算跨度\n未提及年份 → years: 1\n5. 其他字段默认值\nshow_details: true\nverification_type:\
+            \ \"货币\"\nhours_by_level: {}\nunit: \"1\"\nspecial_requirements: \"\"\n\
+            输出格式\n严格按照以下JSON格式输出，不要添加任何额外说明：\n{\n  \"company_name\": \"提取的公司名称或待定客户\"\
+            ,\n  \"service_category\": \"audit或tax\",\n  \"service_item\": \"具体服务项目名称\"\
+            ,\n  \"amount\": 数值（保留2位小数）,\n  \"amount_type\": \"asset/revenue/capital\"\
+            ,\n  \"unit\": \"1\",\n  \"special_requirements\": \"\",\n  \"years\"\
+            : 年份数量,\n  \"show_details\": true,\n  \"hours_by_level\": {},\n  \"verification_type\"\
+            : \"货币\"\n}\n\n\n重要提醒\n始终先处理输入格式，提取实际内容\n公司名称要提取完整，包含\"有限公司\"等后缀\n金额要进行单位转换（万→数字）\n\
+            输出必须是标准JSON格式，不带任何额外文字\n\n口语内容：{{#1756172570320.user_input#}}"
+        selected: false
+        structured_output:
+          schema:
+            additionalProperties: false
+            properties:
+              amount:
+                type: string
+              amount_type:
+                type: string
+              company_name:
+                type: string
+              hours_by_level:
+                additionalProperties: false
+                description: 小时和人员
+                type: string
+              service_category:
+                description: 服务分类
+                enum:
+                - audit
+                - tax
+                type: string
+              service_item:
+                type: string
+              show_details:
+                type: string
+              verification_type:
+                type: string
+              years:
+                type: string
+            required:
+            - company_name
+            - service_item
+            - amount
+            - show_details
+            - amount_type
+            - service_category
+            type: object
+        structured_output_enabled: true
+        title: 抓取关键信息
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1756172932141'
+      position:
+        x: 361.86881025623234
+        y: 262.5
+      positionAbsolute:
+        x: 361.86881025623234
+        y: 262.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "def main(extracted_info: str) -> dict:\n    import json\n    try:\n\
+          \        if isinstance(extracted_info, str):\n            info = json.loads(extracted_info)\n\
+          \        elif isinstance(extracted_info, dict):\n            info = extracted_info\n\
+          \        else:\n            info = {\n                \"company_name\":\
+          \ \"待定客户\",\n                \"service_category\": \"audit\",\n        \
+          \        \"service_item\": \"财务报表审计\",\n                \"amount\": 0,\n\
+          \                \"amount_type\": \"asset\",\n                \"unit\":\
+          \ \"1\",\n                \"special_requirements\": \"输入格式错误\",\n      \
+          \          \"show_details\": \"true\",\n                \"verification_type\"\
+          : \"货币\",\n                \"years\": 1,\n                \"hours_by_level\"\
+          : {}\n            }\n\n        company_name = str(info.get(\"company_name\"\
+          , \"待定客户\"))\n        service_category = str(info.get(\"service_category\"\
+          , \"audit\"))\n        service_item = str(info.get(\"service_item\", \"\
+          财务报表审计\"))\n\n        try:\n            amount_value = float(info.get(\"\
+          amount\", 0))\n            if amount_value == int(amount_value):\n     \
+          \           amount = int(amount_value)\n            else:\n            \
+          \    amount = round(amount_value, 2)\n        except:\n            amount\
+          \ = 0\n\n        amount_type = str(info.get(\"amount_type\", \"asset\"))\n\
+          \        unit = str(info.get(\"unit\", \"1\"))\n        special_requirements\
+          \ = str(info.get(\"special_requirements\", \"\"))\n        \n        # 修改：将\
+          \ show_details 转换为字符串\n        show_details_raw = info.get(\"show_details\"\
+          , True)\n        if isinstance(show_details_raw, bool):\n            show_details\
+          \ = \"true\" if show_details_raw else \"false\"\n        else:\n       \
+          \     show_details = str(show_details_raw).lower()\n            \n     \
+          \   verification_type = str(info.get(\"verification_type\", \"货币\"))\n \
+          \       \n        try:\n            years = int(info.get(\"years\", 1))\n\
+          \        except:\n            years = 1\n            \n        hours_by_level\
+          \ = info.get(\"hours_by_level\", {})\n        if not isinstance(hours_by_level,\
+          \ dict):\n            hours_by_level = {}\n\n    except Exception as e:\n\
+          \        company_name = \"待定客户\"\n        service_category = \"audit\"\n\
+          \        service_item = \"财务报表审计\"\n        amount = 0\n        amount_type\
+          \ = \"asset\"\n        unit = \"1\"\n        special_requirements = f\"\
+          解析错误: {str(e)}\"\n        show_details = \"true\"  # 修改：异常情况下也返回字符串\n  \
+          \      verification_type = \"货币\"\n        years = 1\n        hours_by_level\
+          \ = {}\n\n    return {\n        \"company_name\": company_name,\n      \
+          \  \"service_category\": service_category,\n        \"service_item\": service_item,\n\
+          \        \"amount\": amount,\n        \"amount_type\": amount_type,\n  \
+          \      \"unit\": unit,\n        \"special_requirements\": special_requirements,\n\
+          \        \"show_details\": show_details,\n        \"verification_type\"\
+          : verification_type,\n        \"years\": years,\n        \"hours_by_level\"\
+          : hours_by_level\n    }"
+        code_language: python3
+        desc: ''
+        outputs:
+          amount:
+            children: null
+            type: number
+          amount_type:
+            children: null
+            type: string
+          company_name:
+            children: null
+            type: string
+          hours_by_level:
+            children: null
+            type: object
+          service_category:
+            children: null
+            type: string
+          service_item:
+            children: null
+            type: string
+          show_details:
+            children: null
+            type: string
+          special_requirements:
+            children: null
+            type: string
+          unit:
+            children: null
+            type: string
+          verification_type:
+            children: null
+            type: string
+          years:
+            children: null
+            type: number
+        selected: false
+        title: JSON格式化
+        type: code
+        variables:
+        - value_selector:
+          - '1756172932141'
+          - structured_output
+          value_type: object
+          variable: extracted_info
+      height: 53
+      id: '1756173649448'
+      position:
+        x: 697.1846883671016
+        y: 262.5
+      positionAbsolute:
+        x: 697.1846883671016
+        y: 262.5
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        cases:
+        - case_id: 'true'
+          conditions:
+          - comparison_operator: is
+            id: 81d6fdc6-7322-455a-87d3-bf0450cdfb0e
+            value: audit
+            varType: string
+            variable_selector:
+            - '1756173649448'
+            - service_category
+          id: 'true'
+          logical_operator: and
+        - case_id: b32b390a-1f85-4c1f-91fd-05ae9bae90c3
+          conditions:
+          - comparison_operator: contains
+            id: d503f522-452d-4611-8cc1-56d5f5f381b1
+            value: 这个不要的条件
+            varType: string
+            variable_selector:
+            - '1756172932141'
+            - text
+          id: b32b390a-1f85-4c1f-91fd-05ae9bae90c3
+          logical_operator: and
+        desc: ''
+        selected: false
+        title: 服务类型分支
+        type: if-else
+      height: 173
+      id: '1756174131677'
+      position:
+        x: 1052.7027004092374
+        y: 230.7677588605789
+      positionAbsolute:
+        x: 1052.7027004092374
+        y: 230.7677588605789
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\nfrom datetime import datetime\n\ndef calculate_audit_fee(service_item,\
+          \ amount):\n    \"\"\"计算审计服务收费\"\"\"\n    if service_item == \"财务报表审计\"\
+          :\n        if amount <= 500000:\n            return 2000\n        elif amount\
+          \ <= 1000000:\n            return 2000 + (amount - 500000) * 0.002\n   \
+          \     elif amount <= 5000000:\n            return 3000 + (amount - 1000000)\
+          \ * 0.0009\n        elif amount <= 10000000:\n            return 6600 +\
+          \ (amount - 5000000) * 0.0007\n        else:\n            return 10100 +\
+          \ (amount - 10000000) * 0.0005\n\n    elif service_item == \"资本验证\":\n \
+          \       if amount <= 500000:\n            return 1200\n        elif amount\
+          \ <= 1000000:\n            return 1200 + (amount - 500000) * 0.0015\n  \
+          \      elif amount <= 5000000:\n            return 1950 + (amount - 1000000)\
+          \ * 0.0004\n        elif amount <= 10000000:\n            return 3550 +\
+          \ (amount - 5000000) * 0.0003\n        else:\n            return 5050 +\
+          \ (amount - 10000000) * 0.0002\n\n    elif service_item in [\"合并、分立、清算审计\"\
+          , \"经济责任审计\"]:\n        base_fee = calculate_audit_fee(\"财务报表审计\", amount)\n\
+          \        return base_fee * 1.5\n\n    elif service_item == \"清产核资\":\n \
+          \       base_fee = calculate_audit_fee(\"财务报表审计\", amount)\n        return\
+          \ base_fee * 2\n\n    elif service_item == \"外汇收支审核\":\n        return max(1000,\
+          \ amount * 0.001)\n\n    else:\n        return calculate_audit_fee(\"财务报表审计\"\
+          , amount)\n\ndef main(company_name=\"待定客户\", service_category=\"audit\"\
+          , service_item=\"财务报表审计\", amount=0, amount_type=\"asset\", special_requirements=\"\
+          \") -> dict:\n    # 计算收费\n    fee_value = calculate_audit_fee(service_item,\
+          \ float(amount))\n\n    amount_str = str(int(amount)) if float(amount) ==\
+          \ int(float(amount)) else f\"{float(amount):.2f}\"\n    fee_str = str(int(fee_value))\
+          \ if fee_value == int(fee_value) else f\"{fee_value:.2f}\"\n\n    return\
+          \ {\n        \"company_name\": str(company_name),\n        \"service_category\"\
+          : str(service_category),\n        \"service_item\": str(service_item),\n\
+          \        \"amount\": amount_str,\n        \"amount_type\": str(amount_type),\n\
+          \        \"special_requirements\": str(special_requirements),\n        \"\
+          fee\": fee_str,\n        \"date\": datetime.now().strftime(\"%Y年%m月%d日\"\
+          )\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          amount:
+            children: null
+            type: string
+          amount_type:
+            children: null
+            type: string
+          company_name:
+            children: null
+            type: string
+          date:
+            children: null
+            type: string
+          fee:
+            children: null
+            type: string
+          service_category:
+            children: null
+            type: string
+          service_item:
+            children: null
+            type: string
+          special_requirements:
+            children: null
+            type: string
+        selected: false
+        title: 审计计算费用
+        type: code
+        variables:
+        - value_selector:
+          - '1756173649448'
+          - company_name
+          value_type: string
+          variable: company_name
+        - value_selector:
+          - '1756173649448'
+          - service_item
+          value_type: string
+          variable: service_item
+        - value_selector:
+          - '1756173649448'
+          - amount
+          value_type: string
+          variable: amount
+      height: 53
+      id: '1756174402153'
+      position:
+        x: 2376.9686358369195
+        y: -1014.1527041503826
+      positionAbsolute:
+        x: 2376.9686358369195
+        y: -1014.1527041503826
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "from datetime import datetime\n\ndef calculate_tax_fee(service_item,\
+          \ amount):\n    \"\"\"计算税务服务收费\"\"\"\n    if service_item == \"企业所得税汇算清缴纳税申报鉴证\"\
+          :\n        if amount <= 1000000:\n            fee = amount * 0.003\n   \
+          \         return max(fee, 1500)\n        elif amount <= 5000000:\n     \
+          \       return 3000 + (amount - 1000000) * 0.001\n        elif amount <=\
+          \ 10000000:\n            return 7000 + (amount - 5000000) * 0.0005\n   \
+          \     elif amount <= 50000000:\n            return 9500 + (amount - 10000000)\
+          \ * 0.0003\n        elif amount <= 100000000:\n            return 21500\
+          \ + (amount - 50000000) * 0.0002\n        elif amount <= 500000000:\n  \
+          \          return 31500 + (amount - 100000000) * 0.0001\n        elif amount\
+          \ <= 1000000000:\n            return 71500 + (amount - 500000000) * 0.00005\n\
+          \        else:\n            return 96500 + (amount - 1000000000) * 0.00002\n\
+          \n    elif service_item == \"企业资产损失所得税前扣除鉴证\":\n        if amount <= 1000000:\n\
+          \            fee = amount * 0.01\n            return max(fee, 1500)\n  \
+          \      elif amount <= 5000000:\n            return 10000 + (amount - 1000000)\
+          \ * 0.005\n        elif amount <= 10000000:\n            return 30000 +\
+          \ (amount - 5000000) * 0.003\n        else:\n            return 45000 +\
+          \ (amount - 10000000) * 0.002\n\n    elif service_item == \"企业所得税税前弥补亏损鉴证\"\
+          :\n        return calculate_tax_fee(\"企业所得税汇算清缴纳税申报鉴证\", amount)\n\n   \
+          \ else:\n        return calculate_tax_fee(\"企业所得税汇算清缴纳税申报鉴证\", amount)\n\
+          \n\ndef main(company_name=\"待定客户\", service_item=\"企业所得税汇算清缴纳税申报鉴证\", amount=0)\
+          \ -> dict:\n    \"\"\"\n    解析税务服务信息并计算收费\n    输入字段：company_name, service_item,\
+          \ amount\n    输出全部字段都是字符串类型\n    \"\"\"\n    try:\n        # 转换金额\n    \
+          \    try:\n            amount_value = float(amount)\n        except:\n \
+          \           amount_value = 0\n\n        # 计算税务收费\n        fee_value = calculate_tax_fee(service_item,\
+          \ amount_value)\n\n        # 格式化为字符串\n        amount_str = str(int(amount_value))\
+          \ if amount_value == int(amount_value) else f\"{amount_value:.2f}\"\n  \
+          \      fee_str = str(int(fee_value)) if fee_value == int(fee_value) else\
+          \ f\"{fee_value:.2f}\"\n\n    except Exception as e:\n        company_name\
+          \ = \"待定客户\"\n        service_item = \"企业所得税汇算清缴纳税申报鉴证\"\n        amount_str\
+          \ = \"0\"\n        fee_str = \"0\"\n\n    return {\n        \"company_name\"\
+          : str(company_name),\n        \"service_item\": str(service_item),\n   \
+          \     \"amount\": amount_str,\n        \"fee\": fee_str,\n        \"date\"\
+          : datetime.now().strftime(\"%Y年%m月%d日\")\n    }\n\n\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          amount:
+            children: null
+            type: string
+          company_name:
+            children: null
+            type: string
+          date:
+            children: null
+            type: string
+          fee:
+            children: null
+            type: string
+          service_item:
+            children: null
+            type: string
+        selected: false
+        title: 税务计算费用
+        type: code
+        variables:
+        - value_selector:
+          - '1756173649448'
+          - company_name
+          value_type: string
+          variable: company_name
+        - value_selector:
+          - '1756173649448'
+          - service_item
+          value_type: string
+          variable: service_item
+        - value_selector:
+          - '1756173649448'
+          - amount
+          value_type: string
+          variable: amount
+      height: 53
+      id: '1756174408612'
+      position:
+        x: 1979.6975620799378
+        y: -691.2588789250583
+      positionAbsolute:
+        x: 1979.6975620799378
+        y: -691.2588789250583
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        selected: false
+        template: "{\r\n  \"公司名称\": \"{{company_name}}\", \r\n  \"服务项目\": \"{{service_item}}\"\
+          , \r\n  \"收费\": \"{{fee}}\",           \r\n  \"年月日\": \"{{data}}\"\r\n}"
+        title: 模板转换 2
+        type: template-transform
+        variables:
+        - value_selector:
+          - '1756174408612'
+          - company_name
+          value_type: string
+          variable: company_name
+        - value_selector:
+          - '1756174408612'
+          - service_item
+          value_type: string
+          variable: service_item
+        - value_selector:
+          - '1756174408612'
+          - fee
+          value_type: string
+          variable: fee
+        - value_selector:
+          - '1756174408612'
+          - date
+          value_type: string
+          variable: date
+      height: 53
+      id: '1756175153835'
+      position:
+        x: 2456.1332109963805
+        y: -864.699772100262
+      positionAbsolute:
+        x: 2456.1332109963805
+        y: -864.699772100262
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1756194683461'
+          - structured_output
+          value_type: object
+          variable: final_output
+        selected: false
+        title: 结束
+        type: end
+      height: 89
+      id: '1756175288739'
+      position:
+        x: 2718.4329729515853
+        y: -753.2703806316028
+      positionAbsolute:
+        x: 2718.4329729515853
+        y: -753.2703806316028
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1756175153835'
+          - output
+          value_type: string
+          variable: final_output
+        selected: false
+        title: 结束 (1)
+        type: end
+      height: 89
+      id: '17561798867230'
+      position:
+        x: 2666.340303943107
+        y: -878.1518866538445
+      positionAbsolute:
+        x: 2666.340303943107
+        y: -878.1518866538445
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        context:
+          enabled: false
+          variable_selector: []
+        desc: ''
+        model:
+          completion_params:
+            max_tokens: 8192
+            temperature: 0.3
+            top_p: 0.8
+          mode: chat
+          name: qwen-max
+          provider: langgenius/tongyi/tongyi
+        prompt_template:
+        - id: 44431865-336e-4451-a35a-25820b139ac6
+          role: system
+          text: "一、角色定义（Role）\n你是一位资深的审计收费专家，精通《广东省会计师事务所审计服务收费标准》，具有10年以上的审计定价经验。你的任务是为客户提供准确、透明、合规的审计收费计算服务。\n\
+            二、核心技能（Skills）\n精确计算能力：掌握阶梯式分段累进计费法则\n逻辑推理能力：能够根据不同服务类型选择正确的计费标准\n数据验证能力：对计算结果进行交叉验证，确保准确性\n\
+            清晰表达能力：将复杂的计算过程以易懂的方式呈现\n三、专业知识库（Knowledge Base）\n3.1 财务报表审计收费标准（按年收费）\n\
+            计费区间                费率/固定费用\n0-50万元               固定2,000元\n50-100万元 \
+            \            0.200%\n100-500万元            0.090%\n500-1000万元         \
+            \  0.070%\n1000-5000万元          0.050%\n5000万-1亿元           0.030%\n1-5亿元\
+            \                0.015%\n5-10亿元               0.010%\n10亿元以上         \
+            \    0.008%\n\n3.2 资本验证收费标准（按次收费）\n货币出资：\n0-50万元               固定1,200元\n\
+            50-100万元             0.150%\n100-500万元            0.040%\n500-1000万元 \
+            \          0.030%\n1000-5000万元          0.020%\n5000万-1亿元           0.015%\n\
+            1-5亿元                0.010%\n5-10亿元               0.008%\n10亿元以上     \
+            \        0.006%\n\n非货币出资：货币出资标准的120%\n\n3.3 特殊审计项目调整系数\n合并、分立、清算审计：前3年150%，超过3年120%\n\
+            经济责任审计：前3年150%，超过3年120%\n清产核资：200%\n医疗卫生机构：1亿以下90%，1-5亿80%，5亿以上70%\n3.4\
+            \ 计时收费标准\n初级助理：300元/小时\n助理：600元/小时\n注册会计师：1,000元/小时\n项目经理：1,500元/小时\n\
+            部门经理：2,000元/小时\n合伙人：3,000元/小时\n\n四、任务执行流程（Task Process）- 思维链COT\nStep\
+            \ 1: 信息识别与验证\n思考过程：\n1. 识别客户名称\n2. 确认服务项目类型\n3. 验证计费基数的有效性（必须为正数）\n4.\
+            \ 确认金额单位（默认人民币）\n5. 识别特殊参数或要求\n\nStep 2: 选择计费标准\n思考过程：\n1. 根据服务项目匹配对应的收费标准表\n\
+            2. 确认是否需要应用特殊系数\n3. 确定计费单位（年/次/项/小时）\n\nStep 3: 阶梯计算执行\n思考链计算模板：\n设：计费基数\
+            \ = X 元\n\n第一步：确定X所跨越的所有收费区间\n第二步：逐区间计算\n  - 区间1：[起始值-结束值]\n    计算金额 =\
+            \ min(X, 区间上限) - 区间下限\n    该区间费用 = 计算金额 × 费率（或固定费用）\n  \n  - 区间2：[起始值-结束值]\n\
+            \    如果 X > 区间下限：\n      计算金额 = min(X, 区间上限) - 区间下限\n      该区间费用 = 计算金额\
+            \ × 费率\n    否则：该区间费用 = 0\n  \n  - 继续计算后续区间...\n\n第三步：累加所有区间费用\n  基础费用\
+            \ = Σ(各区间费用)\n\n第四步：应用特殊系数（如有）\n  最终费用 = 基础费用 × 调整系数\n\nStep 4: 结果验证\n\
+            验证清单：\n□ 所有区间是否计算完整\n□ 金额分段是否正确\n□ 费率应用是否准确\n□ 特殊系数是否已应用\n□ 结果是否保留2位小数\n\
+            \n五、输出格式（Output Format）\n5.1 计算过程展示\n【客户信息确认】\n- 客户名称：{{#1756173649448.company_name#}}\n\
+            - 服务项目：{{#1756173649448.service_item#}}\n- 计费基数：{{#1756173649448.amount#}}元\n\
+            - 计费单位：{{#1756173649448.unit#}}\n\n【思维链计算过程】\nStep 1: 识别服务类型 → {具体类型}\n\
+            Step 2: 选择收费标准 → {标准名称}\nStep 3: 阶梯式分段计算\n  区间1：[0-X万] → 费用计算过程 → 结果\n\
+            \  区间2：[X-Y万] → 费用计算过程 → 结果\n  ...\n  小计：{基础费用}元\n\nStep 4: 特殊调整（如有）\n\
+            \  调整系数：{系数}\n  调整后费用：{最终费用}元\n\n【计算结果】\n最终审计收费：￥{fee}元（大写：{中文大写}）\n\n\
+            5.2 JSON格式输出\n{\n  \"structured_output\": {\n    \"company_name\": \"\
+            客户公司名称\",\n    \"service_item\": \"服务项目类型\",\n    \"fee\": \"最终计算费用（保留2位小数）\"\
+            ,\n    \"data\": \"详细计算过程说明\"\n  },\n  \"text\": \"完整的计算说明文本\",\n  \"\
+            usage\": {\n    \"prompt_tokens\": 0,\n    \"prompt_unit_price\": \"0\"\
+            ,\n    \"prompt_price_unit\": \"CNY\",\n    \"prompt_price\": \"0\",\n\
+            \    \"completion_tokens\": 0,\n    \"completion_unit_price\": \"0\",\n\
+            \    \"completion_price_unit\": \"CNY\",\n    \"completion_price\": \"\
+            0\",\n    \"total_tokens\": 0,\n    \"total_price\": \"0\",\n    \"currency\"\
+            : \"CNY\",\n    \"latency\": 0\n  },\n  \"finish_reason\": \"complete\"\
+            ,\n  \"files\": []\n}\n\n六、执行示例\n示例1：130万元财务报表审计\n输入：\n客户名称：广州智慧科技有限公司\n\
+            服务项目：财务报表审计\n计费基数：130万元\n\n思维链计算过程：\nStep 1: 识别 → 财务报表审计（年度）\nStep 2:\
+            \ 选择标准 → 财务报表审计阶梯收费表\n\nStep 3: 阶梯计算（130万元）\n  思考：130万跨越了3个收费区间\n  \n\
+            \  区间1 [0-50万]：\n    该区间应收金额 = 50万（全部区间）\n    该区间费用 = 固定收费2,000元\n  \n\
+            \  区间2 [50-100万]：\n    该区间应收金额 = 100万 - 50万 = 50万（全部区间）\n    该区间费用 = 50万\
+            \ × 0.200% = 1,000元\n  \n  区间3 [100-500万]：\n    该区间应收金额 = 130万 - 100万\
+            \ = 30万（部分区间）\n    该区间费用 = 30万 × 0.090% = 270元\n  \n  基础费用合计 = 2,000 +\
+            \ 1,000 + 270 = 3,270元\n\nStep 4: 无特殊调整\n  最终费用 = ￥3,270.00元\n\n示例2：260万元财务报表审计\n\
+            输入：\n客户名称：深圳创新技术有限公司\n服务项目：财务报表审计\n计费基数：260万元\n\n思维链计算过程：\nStep 1: 识别\
+            \ → 财务报表审计（年度）\nStep 2: 选择标准 → 财务报表审计阶梯收费表\n\nStep 3: 阶梯计算（260万元）\n  思考：260万跨越了3个收费区间\n\
+            \  \n  区间1 [0-50万]：\n    该区间应收金额 = 50万（全部区间）\n    该区间费用 = 固定收费2,000元\n\
+            \  \n  区间2 [50-100万]：\n    该区间应收金额 = 100万 - 50万 = 50万（全部区间）\n    该区间费用\
+            \ = 50万 × 0.200% = 1,000元\n  \n  区间3 [100-500万]：\n    该区间应收金额 = 260万 -\
+            \ 100万 = 160万（部分区间）\n    该区间费用 = 160万 × 0.090% = 1,440元\n  \n  基础费用合计\
+            \ = 2,000 + 1,000 + 1,440 = 4,440元\n\nStep 4: 无特殊调整\n  最终费用 = ￥4,440.00元\n\
+            \n示例3：3500万元财务报表审计\n输入：\n客户名称：广东科技有限公司\n服务项目：财务报表审计\n计费基数：3500万元\n\n思维链计算过程：\n\
+            Step 1: 识别 → 财务报表审计（年度）\nStep 2: 选择标准 → 财务报表审计阶梯收费表\n\nStep 3: 阶梯计算（3500万元）\n\
+            \  思考：3500万跨越了5个收费区间\n  \n  区间1 [0-50万]：固定收费 = 2,000元\n  区间2 [50-100万]：50万\
+            \ × 0.200% = 1,000元\n  区间3 [100-500万]：400万 × 0.090% = 3,600元\n  区间4 [500-1000万]：500万\
+            \ × 0.070% = 3,500元\n  区间5 [1000-5000万]：2500万 × 0.050% = 12,500元\n  \n\
+            \  基础费用合计 = 2,000 + 1,000 + 3,600 + 3,500 + 12,500 = 22,600元\n\nStep 4:\
+            \ 无特殊调整\n  最终费用 = ￥22,600.00元\n\n示例4：150万元资本验证（货币出资）\n输入：\n客户名称：佛山制造有限公司\n\
+            服务项目：资本验证\n计费基数：150万元\n出资类型：货币出资\n\n思维链计算过程：\nStep 1: 识别 → 资本验证（按次）\n\
+            Step 2: 选择标准 → 资本验证货币出资收费表\n\nStep 3: 阶梯计算（150万元）\n  区间1 [0-50万]：固定收费\
+            \ = 1,200元\n  区间2 [50-100万]：50万 × 0.150% = 750元\n  区间3 [100-150万]：50万\
+            \ × 0.040% = 200元\n  \n  基础费用合计 = 1,200 + 750 + 200 = 2,150元\n\nStep 4:\
+            \ 无特殊调整（货币出资）\n  最终费用 = ￥2,150.00元\n\n七、特殊情况处理规则\n多年度审计：分别计算每年费用后累加\n\
+            混合服务：分项计算后合并\n外币折算：按当日汇率转换为人民币\n最低收费：任何项目不低于1,000元\n异常值处理：负数或零值提示错误\n\
+            八、常见错误与正确对比\n❌ 错误计算示例（130万元）\n错误方法：130万 × 0.090% = 1,170元  ❌\n错误原因：直接用总额乘以单一费率，忽略了阶梯原则\n\
+            \n✅ 正确计算示例（130万元）\n正确方法：\n- 前50万：2,000元（固定）\n- 50-100万部分：50万 × 0.200%\
+            \ = 1,000元\n- 100-130万部分：30万 × 0.090% = 270元\n- 合计：2,000 + 1,000 + 270\
+            \ = 3,270元 ✅\n\n\U0001F4A1 关键差异\n错误结果：1,170元\n正确结果：3,270元\n差额：2,100元（相差179%！）\n\
+            九、质量保证要点\n必须使用阶梯累进计算，禁止简单乘法\n必须显示完整计算过程\n必须精确到小数点后2位\n必须进行结果复核\n必须返回规范的JSON格式\n\
+            \n使用说明：请严格按照上述框架执行计算任务，确保每一步都有清晰的思维过程记录，让客户能够完全理解收费的合理性和准确性。"
+        selected: false
+        structured_output:
+          schema:
+            additionalProperties: false
+            properties:
+              files:
+                items:
+                  type: string
+                type: array
+              finish_reason:
+                type: string
+              structured_output:
+                additionalProperties: false
+                properties:
+                  company_name:
+                    type: string
+                  data:
+                    type: string
+                  fee:
+                    type: string
+                  service_item:
+                    type: string
+                required:
+                - company_name
+                - service_item
+                - fee
+                - data
+                type: object
+              text:
+                type: string
+              usage:
+                additionalProperties: false
+                properties:
+                  completion_price:
+                    type: string
+                  completion_price_unit:
+                    type: string
+                  completion_tokens:
+                    type: number
+                  completion_unit_price:
+                    type: string
+                  currency:
+                    type: string
+                  latency:
+                    type: number
+                  prompt_price:
+                    type: string
+                  prompt_price_unit:
+                    type: string
+                  prompt_tokens:
+                    type: number
+                  prompt_unit_price:
+                    type: string
+                  total_price:
+                    type: string
+                  total_tokens:
+                    type: number
+                required:
+                - prompt_tokens
+                - prompt_unit_price
+                - prompt_price_unit
+                - prompt_price
+                - completion_tokens
+                - completion_unit_price
+                - completion_price_unit
+                - completion_price
+                - total_tokens
+                - total_price
+                - currency
+                - latency
+                type: object
+            required:
+            - text
+            - usage
+            - finish_reason
+            - structured_output
+            - files
+            type: object
+        structured_output_enabled: true
+        title: LLM 2
+        type: llm
+        variables: []
+        vision:
+          enabled: false
+      height: 89
+      id: '1756194683461'
+      position:
+        x: 2326.2356630536206
+        y: -720.7763529994905
+      positionAbsolute:
+        x: 2326.2356630536206
+        y: -720.7763529994905
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1756173649448'
+          - company_name
+          value_type: string
+          variable: company_name
+        - value_selector:
+          - '1756173649448'
+          - service_category
+          value_type: string
+          variable: service_category
+        - value_selector:
+          - '1756173649448'
+          - service_item
+          value_type: string
+          variable: service_item
+        - value_selector:
+          - '1756173649448'
+          - amount
+          value_type: string
+          variable: amount
+        - value_selector:
+          - '1756173649448'
+          - amount_type
+          value_type: string
+          variable: amount_type
+        - value_selector:
+          - '1756173649448'
+          - unit
+          value_type: string
+          variable: unit
+        - value_selector:
+          - '1756173649448'
+          - special_requirements
+          value_type: string
+          variable: special_requirements
+        - value_selector:
+          - '1756173649448'
+          - years
+          value_type: string
+          variable: years
+        - value_selector:
+          - '1756173649448'
+          - show_details
+          value_type: string
+          variable: show_details
+        - value_selector:
+          - '1756173649448'
+          - hours_by_level
+          value_type: string
+          variable: hours_by_level
+        - value_selector:
+          - '1756173649448'
+          - verification_type
+          value_type: string
+          variable: verification_type
+        selected: false
+        title: 结束 3
+        type: end
+      height: 353
+      id: '1756259088007'
+      position:
+        x: 2499.6825026629376
+        y: -538.1642625712436
+      positionAbsolute:
+        x: 2499.6825026629376
+        y: -538.1642625712436
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "import json\nfrom datetime import datetime\nfrom decimal import Decimal,\
+          \ ROUND_HALF_UP\n\n\ndef round_to_2_decimal(value):\n    \"\"\"精确到小数点2位的四舍五入\"\
+          \"\"\n    decimal_value = Decimal(str(value))\n    return float(decimal_value.quantize(Decimal('0.01'),\
+          \ rounding=ROUND_HALF_UP))\n\n\ndef calculate_financial_audit_fee(amount,\
+          \ return_details=False):\n    \"\"\"\n    计算财务报表审计收费（阶梯式分段累进计费）\n\n    收费标准（根据Excel表格）：\n\
+          \    - 0-50万元：2,000元（固定）\n    - 50-100万元部分：该部分金额 × 0.200%\n    - 100-500万元部分：该部分金额\
+          \ × 0.090%\n    - 500-1000万元部分：该部分金额 × 0.070%\n    - 1000-5000万元部分：该部分金额\
+          \ × 0.050%\n    - 5000万元-1亿元部分：该部分金额 × 0.030%\n    - 1-5亿元部分：该部分金额 × 0.015%\n\
+          \    - 5-10亿元部分：该部分金额 × 0.010%\n    - 10亿元以上部分：该部分金额 × 0.008%\n\n    例如：150万的计算\
+          \ = 2000(50万固定) + 50万×0.2% + 50万×0.09% = 2000 + 1000 + 450 = 3450元\n   \
+          \ \"\"\"\n\n    # 定义收费阶梯 收费标准定义\n    brackets = [\n        (500000, 2000,\
+          \ 0),  # 0-50万：固定2000元\n        (1000000, 0, 0.002),  # 50-100万：0.2%\n \
+          \       (5000000, 0, 0.0009),  # 100-500万：0.09%\n        (10000000, 0, 0.0007),\
+          \  # 500-1000万：0.07%\n        (50000000, 0, 0.0005),  # 1000-5000万：0.05%\n\
+          \        (100000000, 0, 0.0003),  # 5000万-1亿：0.03%\n        (500000000,\
+          \ 0, 0.00015),  # 1-5亿：0.015%\n        (1000000000, 0, 0.0001),  # 5-10亿：0.01%\n\
+          \        (float('inf'), 0, 0.00008)  # 10亿以上：0.008%\n    ]\n\n    total_fee\
+          \ = 0\n    prev_limit = 0\n    calculation_steps = []\n\n    for upper_limit,\
+          \ fixed_fee, rate in brackets:\n        if amount <= prev_limit:\n     \
+          \       break\n\n        # 计算本段的计费基数 也就是超出部分 segment_amount 这个阶段要计算的钱\n\
+          \        if amount <= upper_limit:\n            segment_amount = amount\
+          \ - prev_limit\n        else:\n            segment_amount = upper_limit\
+          \ - prev_limit\n\n        # 计算本段费用\n        if fixed_fee > 0:  # 固定收费\n\
+          \            segment_fee = fixed_fee\n            calculation_steps.append(f\"\
+          0-{upper_limit / 10000:.0f}万元: {fixed_fee}元（固定）\")\n        else:  # 按比例收费\n\
+          \            segment_fee = segment_amount * rate\n            if segment_amount\
+          \ > 0:\n                calculation_steps.append(\n                    f\"\
+          {prev_limit / 10000:.0f}-{min(amount, upper_limit) / 10000:.0f}万元: \"\n\
+          \                    f\"{segment_amount / 10000:.0f}万 × {rate * 100:.3f}%\
+          \ = {segment_fee:.2f}元\"\n                )\n\n        total_fee += segment_fee\n\
+          \n        if amount <= upper_limit:\n            break\n        prev_limit\
+          \ = upper_limit\n\n    result = round_to_2_decimal(total_fee)\n\n    if\
+          \ return_details:\n        return result, calculation_steps\n    return\
+          \ result\n\n\ndef calculate_capital_verification_fee(amount, verification_type=\"\
+          货币\", return_details=False):\n    \"\"\"\n    计算资本验证收费（阶梯式分段累进计费）\n\n  \
+          \  货币出资收费标准：\n    - 0-50万元：1,200元（固定）\n    - 50-100万元部分：该部分金额 × 0.150%\n\
+          \    - 100-500万元部分：该部分金额 × 0.040%\n    - 500-1000万元部分：该部分金额 × 0.030%\n \
+          \   - 1000-5000万元部分：该部分金额 × 0.020%\n    - 5000万元-1亿元部分：该部分金额 × 0.015%\n\
+          \    - 1-5亿元部分：该部分金额 × 0.010%\n    - 5-10亿元部分：该部分金额 × 0.008%\n    - 10亿元以上部分：该部分金额\
+          \ × 0.006%\n\n    其他出资：按货币出资方式收费标准的120%计收\n    \"\"\"\n\n    # 定义收费阶梯\n\
+          \    brackets = [\n        (500000, 1200, 0),  # 0-50万：固定1200元\n       \
+          \ (1000000, 0, 0.0015),  # 50-100万：0.15%\n        (5000000, 0, 0.0004),\
+          \  # 100-500万：0.04%\n        (10000000, 0, 0.0003),  # 500-1000万：0.03%\n\
+          \        (50000000, 0, 0.0002),  # 1000-5000万：0.02%\n        (100000000,\
+          \ 0, 0.00015),  # 5000万-1亿：0.015%\n        (500000000, 0, 0.0001),  # 1-5亿：0.01%\n\
+          \        (1000000000, 0, 0.00008),  # 5-10亿：0.008%\n        (float('inf'),\
+          \ 0, 0.00006)  # 10亿以上：0.006%\n    ]\n\n    total_fee = 0\n    prev_limit\
+          \ = 0\n    calculation_steps = []\n\n    for upper_limit, fixed_fee, rate\
+          \ in brackets:\n        if amount <= prev_limit:\n            break\n\n\
+          \        # 计算本段的计费基数\n        if amount <= upper_limit:\n            segment_amount\
+          \ = amount - prev_limit\n        else:\n            segment_amount = upper_limit\
+          \ - prev_limit\n\n        # 计算本段费用\n        if fixed_fee > 0:  # 固定收费\n\
+          \            segment_fee = fixed_fee\n            calculation_steps.append(f\"\
+          0-{upper_limit / 10000:.0f}万元: {fixed_fee}元（固定）\")\n        else:  # 按比例收费\n\
+          \            segment_fee = segment_amount * rate\n            if segment_amount\
+          \ > 0:\n                calculation_steps.append(\n                    f\"\
+          {prev_limit / 10000:.0f}-{min(amount, upper_limit) / 10000:.0f}万元: \"\n\
+          \                    f\"{segment_amount / 10000:.0f}万 × {rate * 100:.3f}%\
+          \ = {segment_fee:.2f}元\"\n                )\n\n        total_fee += segment_fee\n\
+          \n        if amount <= upper_limit:\n            break\n        prev_limit\
+          \ = upper_limit\n\n    # 其他出资按120%计算\n    if verification_type == \"其他\"\
+          :\n        calculation_steps.append(f\"其他出资按120%计收: {total_fee:.2f} × 1.2\
+          \ = {total_fee * 1.2:.2f}元\")\n        total_fee = total_fee * 1.2\n\n \
+          \   result = round_to_2_decimal(total_fee)\n\n    if return_details:\n \
+          \       return result, calculation_steps\n    return result\n\n\ndef calculate_medical_institution_audit_fee(amount,\
+          \ return_details=False):\n    \"\"\"\n    计算医疗卫生机构等非盈利组织财务报表审计收费\n    按财务报表审计标准的不同比例收费：\n\
+          \    - 1亿元以下部分：按财务报表审计标准下浮10%\n    - 1-5亿元部分：按财务报表审计标准下浮20%\n    - 5亿元以上部分：按财务报表审计标准下浮30%\n\
+          \    \"\"\"\n\n    calculation_steps = []\n\n    # 先计算基础财务报表审计费用\n    base_fee,\
+          \ base_steps = calculate_financial_audit_fee(amount, return_details=True)\n\
+          \n    # 根据金额分段应用不同的折扣\n    if amount <= 100000000:  # 1亿元以下，下浮10%\n    \
+          \    final_fee = base_fee * 0.9\n        calculation_steps.append(f\"基础审计费:\
+          \ {base_fee:.2f}元\")\n        calculation_steps.append(f\"1亿元以下部分下浮10%:\
+          \ {base_fee:.2f} × 0.9 = {final_fee:.2f}元\")\n    elif amount <= 500000000:\
+          \  # 1-5亿元\n        # 分段计算\n        fee_1yi = calculate_financial_audit_fee(100000000)\n\
+          \        fee_above_1yi = base_fee - fee_1yi\n\n        final_fee = fee_1yi\
+          \ * 0.9 + fee_above_1yi * 0.8\n        calculation_steps.append(f\"1亿元部分基础费:\
+          \ {fee_1yi:.2f} × 0.9 = {fee_1yi * 0.9:.2f}元\")\n        calculation_steps.append(f\"\
+          1-5亿元部分基础费: {fee_above_1yi:.2f} × 0.8 = {fee_above_1yi * 0.8:.2f}元\")\n\
+          \        calculation_steps.append(f\"总计: {final_fee:.2f}元\")\n    else:\
+          \  # 5亿元以上\n        fee_1yi = calculate_financial_audit_fee(100000000)\n\
+          \        fee_1to5yi = calculate_financial_audit_fee(500000000) - fee_1yi\n\
+          \        fee_above_5yi = base_fee - calculate_financial_audit_fee(500000000)\n\
+          \n        final_fee = fee_1yi * 0.9 + fee_1to5yi * 0.8 + fee_above_5yi *\
+          \ 0.7\n        calculation_steps.append(f\"1亿元部分: {fee_1yi * 0.9:.2f}元\"\
+          )\n        calculation_steps.append(f\"1-5亿元部分: {fee_1to5yi * 0.8:.2f}元\"\
+          )\n        calculation_steps.append(f\"5亿元以上部分: {fee_above_5yi * 0.7:.2f}元\"\
+          )\n        calculation_steps.append(f\"总计: {final_fee:.2f}元\")\n\n    result\
+          \ = round_to_2_decimal(final_fee)\n\n    if return_details:\n        return\
+          \ result, calculation_steps\n    return result\n\n\ndef calculate_time_based_fee(hours_by_level,\
+          \ return_details=False):\n    \"\"\"\n    计算计时收费\n    收费标准（元/小时）：\n    -\
+          \ 初级助理：300\n    - 助理：600\n    - 注册会计师：1000\n    - 项目经理：1500\n    - 部门经理：2000\n\
+          \    - 合伙人/主任会计师：3000\n    \"\"\"\n    rates = {\n        \"初级助理\": 300,\n\
+          \        \"助理\": 600,\n        \"注册会计师\": 1000,\n        \"项目经理\": 1500,\n\
+          \        \"部门经理\": 2000,\n        \"合伙人\": 3000,\n        \"主任会计师\": 3000\n\
+          \    }\n\n    total_fee = 0\n    calculation_steps = []\n\n    for level,\
+          \ hours in hours_by_level.items():\n        if level in rates and hours\
+          \ > 0:\n            fee = rates[level] * hours\n            total_fee +=\
+          \ fee\n            calculation_steps.append(f\"{level}: {hours}小时 × {rates[level]}元/小时\
+          \ = {fee}元\")\n\n    result = round_to_2_decimal(total_fee)\n\n    if return_details:\n\
+          \        return result, calculation_steps\n    return result\n\n\ndef get_service_unit(service_item):\n\
+          \    \"\"\"获取服务项目的计费单位\"\"\"\n    units = {\n        \"财务报表审计\": \"年\",\n\
+          \        \"投资移民审计\": \"年\",\n        \"医疗卫生机构审计\": \"年\",\n        \"非盈利组织审计\"\
+          : \"年\",\n        \"医疗卫生机构财务报表审计\": \"年\",\n        \"资本验证\": \"次\",\n \
+          \       \"合并、分立、清算审计\": \"项\",\n        \"合并分立清算审计\": \"项\",\n        \"\
+          经济责任审计\": \"项\",\n        \"清产核资\": \"项\",\n        \"外汇收支审核\": \"项\",\n\
+          \        \"特殊目的审计\": \"项\"\n    }\n    return units.get(service_item, \"\
+          项\")\n\n##计算费用\ndef calculate_audit_fee(service_item, amount, verification_type=None,\
+          \ years=None, hours_by_level=None, return_details=False):\n    \"\"\"\n\
+          \    根据服务项目计算审计收费（含计算明细）\n    \"\"\"\n\n    # 财务报表审计\n    if service_item\
+          \ in [\"财务报表审计\", \"投资移民审计\"]:\n        return calculate_financial_audit_fee(amount,\
+          \ return_details)\n\n    # 资本验证\n    elif service_item == \"资本验证\":\n  \
+          \      verification_type = verification_type or \"货币\"\n        return calculate_capital_verification_fee(amount,\
+          \ verification_type, return_details)\n\n    # 合并、分立、清算审计（按财务报表审计的150%，可多年累加）\n\
+          \    elif service_item in [\"合并、分立、清算审计\", \"合并分立清算审计\"]:\n        base_fee\
+          \ = calculate_financial_audit_fee(amount)\n        years = years or 1\n\
+          \        calculation_steps = []\n\n        if years > 1:\n            total_fee\
+          \ = 0\n            for year in range(1, years + 1):\n                if\
+          \ year <= 3:  # 前三年按150%\n                    year_fee = base_fee * 1.5\n\
+          \                    calculation_steps.append(f\"第{year}年: {base_fee:.2f}\
+          \ × 150% = {year_fee:.2f}元\")\n                else:  # 超过三年按120%\n    \
+          \                year_fee = base_fee * 1.2\n                    calculation_steps.append(f\"\
+          第{year}年: {base_fee:.2f} × 120% = {year_fee:.2f}元\")\n                total_fee\
+          \ += year_fee\n\n            result = round_to_2_decimal(total_fee)\n  \
+          \          if return_details:\n                calculation_steps.append(f\"\
+          合计: {result:.2f}元\")\n                return result, calculation_steps\n\
+          \            return result\n        else:\n            result = round_to_2_decimal(base_fee\
+          \ * 1.5)\n            if return_details:\n                return result,\
+          \ [f\"财务报表审计基础费: {base_fee:.2f}元\",\n                                f\"\
+          按150%计收: {base_fee:.2f} × 1.5 = {result:.2f}元\"]\n            return result\n\
+          \n    # 经济责任审计（按财务报表审计的150%，可多年累加）\n    elif service_item == \"经济责任审计\"\
+          :\n        base_fee = calculate_financial_audit_fee(amount)\n        years\
+          \ = years or 1\n        calculation_steps = []\n\n        if years > 1:\n\
+          \            total_fee = 0\n            for year in range(1, years + 1):\n\
+          \                if year <= 3:  # 前三年按150%\n                    year_fee\
+          \ = base_fee * 1.5\n                    calculation_steps.append(f\"第{year}年:\
+          \ {base_fee:.2f} × 150% = {year_fee:.2f}元\")\n                else:  # 超过三年按120%\n\
+          \                    year_fee = base_fee * 1.2\n                    calculation_steps.append(f\"\
+          第{year}年: {base_fee:.2f} × 120% = {year_fee:.2f}元\")\n                total_fee\
+          \ += year_fee\n\n            result = round_to_2_decimal(total_fee)\n  \
+          \          if return_details:\n                calculation_steps.append(f\"\
+          合计: {result:.2f}元\")\n                return result, calculation_steps\n\
+          \            return result\n        else:\n            result = round_to_2_decimal(base_fee\
+          \ * 1.5)\n            if return_details:\n                return result,\
+          \ [f\"财务报表审计基础费: {base_fee:.2f}元\",\n                                f\"\
+          按150%计收: {result:.2f}元\"]\n            return result\n\n    # 清产核资（按财务报表审计的200%）\n\
+          \    elif service_item == \"清产核资\":\n        base_fee = calculate_financial_audit_fee(amount)\n\
+          \        result = round_to_2_decimal(base_fee * 2)\n        if return_details:\n\
+          \            return result, [f\"财务报表审计基础费: {base_fee:.2f}元\",\n        \
+          \                    f\"按200%计收: {base_fee:.2f} × 2 = {result:.2f}元\"]\n\
+          \        return result\n\n    # 外汇收支审核（计时收费，最低1000元）\n    elif service_item\
+          \ == \"外汇收支审核\":\n        if hours_by_level:\n            fee, steps = calculate_time_based_fee(hours_by_level,\
+          \ return_details=True)\n            result = max(1000, fee)\n          \
+          \  if return_details:\n                if result == 1000:\n            \
+          \        steps.append(f\"最低收费: 1000元\")\n                return result,\
+          \ steps\n            return result\n        else:\n            if return_details:\n\
+          \                return 1000, [\"最低收费: 1000元\"]\n            return 1000\n\
+          \n    # 特殊目的审计 按照4收费标准\n    elif service_item == \"特殊目的审计\":\n        base_fee\
+          \ = calculate_financial_audit_fee(amount)\n        result = round_to_2_decimal(base_fee\
+          \ * 1.5)\n        if return_details:\n            return result, [f\"参照经济责任审计标准（财务报表审计的150%）:\
+          \ {result:.2f}元\"]\n        return result\n\n    # 医疗卫生机构等非盈利组织审计\n    elif\
+          \ service_item in [\"医疗卫生机构审计\", \"非盈利组织审计\", \"医疗卫生机构财务报表审计\"]:\n     \
+          \   return calculate_medical_institution_audit_fee(amount, return_details)\n\
+          \n    # 默认按财务报表审计收费\n    else:\n        return calculate_financial_audit_fee(amount,\
+          \ return_details)\n\n\ndef main(verification_type=None, years=None, hours_by_level=None,\
+          \ company_name=\"公司名称\", service_category=\"audit\", \n         service_item=\"\
+          财务报表审计\", amount=0, amount_type=\"asset\", special_requirements=\"\", show_details=True)\
+          \ -> dict:\n    \"\"\"\n    主函数：计算审计服务收费\n\n    参数：\n    - verification_type:\
+          \ 验资类型（\"货币\"或\"其他\"）\n    - years: 年数（用于合并分立清算审计和经济责任审计）\n    - hours_by_level:\
+          \ 计时收费的各级别工时字典\n    - company_name: 客户名称\n    - service_category: 服务类别\n\
+          \    - service_item: 服务项目名称\n    - amount: 计费金额基数（单位：元）\n    - amount_type:\
+          \ 金额类型（asset:资产总额, revenue:销售收入, capital:实收资本）\n    - special_requirements:\
+          \ 特殊要求\n    - show_details: 是否显示计算明细\n\n    返回：\n    包含收费信息的字典\n    \"\"\
+          \"\n\n    # 确保金额为数字\n    try:\n        amount_value = float(amount)\n  \
+          \  except (ValueError, TypeError):\n        amount_value = 0\n\n    # 获取计费单位\n\
+          \    service_unit = get_service_unit(service_item)\n\n    # 计算收费（含明细）\n\
+          \    fee_result = calculate_audit_fee(\n        service_item=service_item,\n\
+          \        amount=amount_value,\n        verification_type=verification_type,\n\
+          \        years=years,\n        hours_by_level=hours_by_level,\n        return_details=True\n\
+          \    )\n\n    if isinstance(fee_result, tuple):\n        fee_value, calculation_steps\
+          \ = fee_result\n    else:\n        fee_value = fee_result\n        calculation_steps\
+          \ = []\n\n    # 格式化金额和费用\n    amount_str = f\"{amount_value:,.0f}\" if amount_value\
+          \ == int(amount_value) else f\"{amount_value:,.2f}\"\n    fee_str = f\"\
+          {fee_value:,.0f}\" if fee_value == int(fee_value) else f\"{fee_value:,.2f}\"\
+          \n\n    # 金额类型说明\n    amount_type_desc = {\n        \"asset\": \"资产总额\"\
+          ,\n        \"revenue\": \"销售收入\",\n        \"capital\": \"实收资本\"\n    }\n\
+          \n    # 构建返回结果\n    result = {\n        \"company_name\": str(company_name),\n\
+          \        \"service_category\": str(service_category),\n        \"service_item\"\
+          : str(service_item),\n        \"service_unit\": service_unit,\n        \"\
+          amount\": amount_str,\n        \"amount_type\": amount_type_desc.get(amount_type,\
+          \ amount_type),\n        \"special_requirements\": str(special_requirements),\n\
+          \        \"fee\": fee_str,\n        \"date\": datetime.now().strftime(\"\
+          %Y年%m月%d日\"),\n    }\n\n    # 添加计算明细（如果需要）\n    if show_details and calculation_steps:\n\
+          \        result[\"calculation_details\"] = calculation_steps\n\n    return\
+          \ result"
+        code_language: python3
+        desc: ''
+        outputs:
+          amount:
+            children: null
+            type: string
+          amount_type:
+            children: null
+            type: string
+          calculation_details:
+            children: null
+            type: array[string]
+          company_name:
+            children: null
+            type: string
+          date:
+            children: null
+            type: string
+          fee:
+            children: null
+            type: string
+          service_category:
+            children: null
+            type: string
+          service_item:
+            children: null
+            type: string
+          service_unit:
+            children: null
+            type: string
+          special_requirements:
+            children: null
+            type: string
+        selected: false
+        title: 审计计算费用
+        type: code
+        variables:
+        - value_selector:
+          - '1756173649448'
+          - company_name
+          value_type: string
+          variable: company_name
+        - value_selector:
+          - '1756173649448'
+          - service_category
+          value_type: string
+          variable: service_category
+        - value_selector:
+          - '1756173649448'
+          - service_item
+          value_type: string
+          variable: service_item
+        - value_selector:
+          - '1756173649448'
+          - amount
+          value_type: number
+          variable: amount
+        - value_selector:
+          - '1756173649448'
+          - amount_type
+          value_type: string
+          variable: amount_type
+        - value_selector:
+          - '1756173649448'
+          - special_requirements
+          value_type: string
+          variable: special_requirements
+        - value_selector:
+          - '1756173649448'
+          - show_details
+          value_type: string
+          variable: show_details
+        - value_selector:
+          - '1756173649448'
+          - verification_type
+          value_type: string
+          variable: verification_type
+        - value_selector:
+          - '1756173649448'
+          - years
+          value_type: number
+          variable: years
+        - value_selector:
+          - '1756173649448'
+          - hours_by_level
+          value_type: object
+          variable: hours_by_level
+      height: 53
+      id: '1756363745296'
+      position:
+        x: 1350.672006972394
+        y: 529.7083174955267
+      positionAbsolute:
+        x: 1350.672006972394
+        y: 529.7083174955267
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1756363745296'
+          - company_name
+          value_type: string
+          variable: result
+        - value_selector:
+          - '1756363745296'
+          - service_item
+          value_type: string
+          variable: service_item
+        - value_selector:
+          - '1756363745296'
+          - fee
+          value_type: string
+          variable: fee
+        - value_selector:
+          - '1756363745296'
+          - date
+          value_type: string
+          variable: date
+        - value_selector:
+          - '1756363745296'
+          - calculation_details
+          value_type: array[string]
+          variable: calculation_details
+        - value_selector:
+          - '1756363745296'
+          - amount
+          value_type: string
+          variable: amount
+        - value_selector:
+          - '1756363745296'
+          - amount_type
+          value_type: string
+          variable: amount_type
+        - value_selector:
+          - '1756363745296'
+          - service_unit
+          value_type: string
+          variable: service_unit
+        selected: true
+        title: 结束 4
+        type: end
+      height: 274
+      id: '1756364043223'
+      position:
+        x: 1802.12810778812
+        y: 573.9315746833297
+      positionAbsolute:
+        x: 1802.12810778812
+        y: 573.9315746833297
+      selected: true
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        code: "\ndef main(arg1: str, arg2: str) -> dict:\n    return {\n        \"\
+          resultA\": arg1 + arg2,\n        \"result\": arg1 ,\n    }\n"
+        code_language: python3
+        desc: ''
+        outputs:
+          result:
+            children: null
+            type: number
+          resultA:
+            children: null
+            type: number
+        selected: false
+        title: 代码执行 5
+        type: code
+        variables:
+        - value_selector:
+          - '1756173649448'
+          - amount
+          value_type: number
+          variable: arg1
+        - value_selector:
+          - '1756173649448'
+          - amount
+          value_type: number
+          variable: arg2
+      height: 53
+      id: '1756366217920'
+      position:
+        x: 2129.8762990374307
+        y: -557.5460398263572
+      positionAbsolute:
+        x: 2129.8762990374307
+        y: -557.5460398263572
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    - data:
+        desc: ''
+        outputs:
+        - value_selector:
+          - '1756366217920'
+          - result
+          value_type: string
+          variable: re
+        selected: false
+        title: 结束 5
+        type: end
+      height: 89
+      id: '1756366266628'
+      position:
+        x: 2097.133577418957
+        y: -462.59214713278413
+      positionAbsolute:
+        x: 2097.133577418957
+        y: -462.59214713278413
+      selected: false
+      sourcePosition: right
+      targetPosition: left
+      type: custom
+      width: 243
+    viewport:
+      x: -447.52263940030934
+      y: 14.764277737142663
+      zoom: 0.7348350797028498
