@@ -28,7 +28,7 @@ def generation_sava_minio(template_name:str,context:dict):
     doc = DocxTemplate(doc_name)
     doc.render(context)
     ##保存文件 命名  "_" + ''.join(random.choices(string.ascii_letters + string.digits, k=8)) +
-    file_path = template_name +".docx"
+    file_path = template_name + uuid.uuid4().hex + ".docx"
 
     doc.save(file_path)  # 保存文件操作
 

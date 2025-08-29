@@ -49,8 +49,3 @@ def generate_accounting_template(company_name, services_data_json, year, month, 
     return url
 
 
-
-
-
-if __name__ == "__main__":
-    generate_accounting_template()
