@@ -28,6 +28,7 @@ import numpy as np
 
 
 from llm.model import get_embedding_model, get_chat_model
+from setting import Milvus_Port, Milvus_Host
 
 
 class MilvusRAGSystem:
@@ -36,8 +37,8 @@ class MilvusRAGSystem:
     def __init__(
             self,
             collection_name: str = "rag_documents",
-            milvus_host: str = "101.126.81.112",
-            milvus_port: str = "19530",
+            milvus_host: str = Milvus_Host,
+            milvus_port: str = Milvus_Port,
             embedding_model: DashScopeEmbeddings = get_embedding_model(),  # OpenAI模型
             dim: int = 2048,  # OpenAI embedding维度
             chunk_size: int = 500,

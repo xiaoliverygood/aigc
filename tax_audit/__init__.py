@@ -1,0 +1,1 @@
+from template_generation.accounting_template import generate_accounting_template

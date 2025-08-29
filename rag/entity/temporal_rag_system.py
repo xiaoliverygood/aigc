@@ -18,6 +18,7 @@ from pymilvus import (
 from langchain.text_splitter import RecursiveCharacterTextSplitter
 ##获取模型 从llm中
 from llm.model import get_embedding_model
+from setting import Milvus_Host, Milvus_Port
 
 
 class TemporalRAGSystem:
@@ -26,8 +27,8 @@ class TemporalRAGSystem:
     def __init__(
             self,
             collection_name: str = "temporal_rag_documents",
-            milvus_host: str = "localhost",
-            milvus_port: str = "19530",
+            milvus_host: str = Milvus_Host,
+            milvus_port: str = Milvus_Port,
             embedding_model: DashScopeEmbeddings = get_embedding_model(),
             dim: int = 1024,
             chunk_size: int = 500,
