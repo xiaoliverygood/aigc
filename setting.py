@@ -9,4 +9,8 @@ BUCKET_NAME='file'
 Milvus_Host="localhost"
 Milvus_Port="19530"
 
+# setting.py
+DIFY_BASE_URL = "http://frp1.mmszxc.xin:27675"  # 不包含 /v1，代码会自动添加
+DIFY_API_KEY = "app-q0QrGtst8DYSFSBECy0zI1YF"  # 你的实际 API Key
+
 
