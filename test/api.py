@@ -1,6 +1,8 @@
 # 测试请求
 import requests
 
+from tax_audit.template_generation.tax_template import generate_tax_template
+
 test_data = {
     "company_name": "测试公司",
     "services": [

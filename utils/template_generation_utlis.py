@@ -35,11 +35,11 @@ def generation_sava_minio(template_name:str,context:dict):
     minio_client = MinioManager()
 
     # 上传单个文件
-    result = minio_client.upload_file(file_path_or_obj=file_path, object_name='template/accounting/'+file_path)
+    result = minio_client.upload_file(file_path_or_obj=file_path, object_name='template/tax_audit/'+file_path)
     try:
 
         if result:
-            file_url = minio_client.get_file_url(object_name='template/accounting/'+file_path)
+            file_url = minio_client.get_file_url(object_name='template/tax_audit/'+file_path)
 
             delete_file(file_path)
 
