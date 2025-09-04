@@ -14,7 +14,7 @@ test_data = {
 }
 
 response = requests.post(
-    'http://localhost:5000/api/generate_template/accounting',
+    'http://localhost:5000/api/generate_template/tax',
     json=test_data
 )
 print(response.json())
